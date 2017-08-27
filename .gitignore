@@ -1,0 +1,7 @@
+target/
+nb-configuration.xml
+nbactions.xml
+dependency-reduced-pom.xml
+.git
+*.class
+

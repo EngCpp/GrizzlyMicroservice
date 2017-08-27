@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Backbone Demo</title>
+        	<link rel="stylesheet" href="js/bootstrap/bootstrap.min.css">
+        
+                <script type="text/javascript" src="js/jquery/jquery-1.11.0.min.js"></script>
+                <script type="text/javascript" src="js/underscore.js/underscore-min.js"></script>
+                <script type="text/javascript" src="js/backbone.js/backbone.js"></script>
+		<!--script>
+			/* Script should be added after the page is loaded */
+			$(document).ready(function(){							 
+			  $('<script>',{type:"text/javascript", src:"js/app.js"}).appendTo('head');			    	
+			});
+		</script-->        		
+    </head>
+    <body>
+		<div class="container">
+		    <h1>User Manager</h1>
+		    <hr/>
+		    <div class="page">
+		        
+		    </div>
+		</div>	
+    </body>
+</html>
+
+<script type="text/template" id="user-list-template">
+    <a href="#/new" class="btn btn-primary">New User</a>
+    <hr/>
+    <table class="table striped">
+        <thead>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+            <th></th>
+        </thead>
+        <tbody>
+            <% _.each(users, function(user) { %>
+            <tr>
+                <td><%= user.get('firstName') %></td>
+                <td><%= user.get('lastName') %></td>
+                <td><%= user.get('age') %></td>
+                <td><a href="#/edit/<%=user.id%>" class="btn">Edit</a></td>
+            </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    
+</script>
+
+<script type="text/template" id="edit-user-template">
+    <form class="edit-user-form">
+        <legend><%=user?'Update':'Create'%> User</legend>
+        <label>First Name</label>
+        <input type="text" name="firstName" value="<%= user?user.get('firstName'):'' %>"/>
+        <label>Last Name</label>
+        <input type="text" name="lastName" value="<%= user?user.get('lastName'):'' %>"/>
+        <label>Age</label>
+        <input type="text" name="age" value="<%= user?user.get('age'):'' %>"/><br>
+        <hr/>
+        
+        <button id="saveBtn" type="submit" class="btn"><%= user?'Update':'Create' %></button>
+        
+        <% if (user) {%>
+            <a href="#/delete/<%=user.id%>" class="btn btn-danger delete">Delete</a>
+            <input type="hidden" name="id" value="<%=user? user.get('id'):'' %>"/>            
+        <% } %>        
+                   
+    </form>
+</script>
+<script type="text/javascript" src="js/app.js"></script>

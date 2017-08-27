@@ -1,0 +1,54 @@
+.barra{
+    border:1px solid black;
+    width:100%;
+    min-height: 20px;
+    background-color:#ffffff;
+}
+
+dados{
+    width:100%;
+    text-align:left;
+}
+
+.cbarra{
+    height:20px;
+    background-color:#7171FF;
+}
+
+.heapM,.NheapM{
+    border:1px solid black;
+    vertical-align:top;
+
+    background-color: #F0F0FF;
+              border: 10px solid white;
+           font-size: 15px;
+}
+
+.graficos{
+    width:80%;
+}
+
+td{
+    width:50%;
+}
+
+table{
+    width:100%;
+}
+
+.quadro-titulo{
+           border: 10px solid #F0F0FF;
+   vertical-align: middle;
+       text-align: center;
+        font-size: 25px;
+ background-color: white;
+            color: #7171FF;
+            width: 90%;
+}
+
+body{
+ background-color: #E6E6FF;
+           margin: 20px;
+	  font-family: sans-serif, Tahoma, Verdana;
+        font-size: 12px;
+}

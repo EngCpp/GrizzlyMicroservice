@@ -1,0 +1,16 @@
+<form class="edit-user-form">
+    <legend>{{id?'Update':'Create'}} User</legend>
+    <label>First Name</label>
+    <input type="text" name="firstName" ng-model="user.firstName" value="{{id?user.firstName:''}}"/>
+    <label>Last Name</label>
+    <input type="text" name="lastName" ng-model="user.lastName"  value="{{id?user.lastName:''}}"/>
+    <label>Age</label>
+    <input type="text" name="age" ng-model="user.age" value="{{id?user.age:''}}"/><br>
+    <hr/>
+
+    <button id="saveBtn" type="submit" ng-click="submit()" class="btn">{{id? 'Update' : 'Create'}}</button>
+
+    <dev ng-if="id">
+        <a ng-click="deleteClick()" class="btn btn-danger delete">Delete</a>          
+    </dev>
+</form>
